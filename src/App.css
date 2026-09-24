@@ -1,0 +1,236 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.tablero-contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.status {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #212529;
+}
+
+.board-row {
+  display: flex;
+}
+
+.square {
+  width: 80px;
+  height: 80px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #111111; /* Forzar glifo en negro */
+  background: #ffffff;
+  border: 2px solid #dee2e6;
+  margin: -1px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.square:hover {
+  background-color: #f1f3f5;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.btn-reiniciar {
+  margin-top: 24px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #0d6efd;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-reiniciar:hover {
+  background-color: #0b5ed7;
+}
+
+.titulo-juego {
+  margin: 0 0 16px 0;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #212529;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+.formulario-jugadores {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 300px;
+  margin-top: 10px;
+}
+
+.formulario-jugadores h2 {
+  font-size: 1.2rem;
+  color: #495057;
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
+.campo-input {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.campo-input label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #212529;
+}
+
+.campo-input input {
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #212529;
+}
+
+.btn-iniciar {
+  padding: 12px;
+  background-color: #198754;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 8px;
+}
+
+.btn-iniciar:hover {
+  background-color: #157347;
+}
+
+.info-jugadores {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 14px;
+  font-size: 1.05rem;
+  color: #495057;
+}
+
+.jugador-activo {
+  background-color: #e7f1ff;
+  color: #0d6efd;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #b6d4fe;
+}
+
+.acciones {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn-cambiar {
+  margin-top: 24px;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #495057;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-cambiar:hover {
+  background-color: #dee2e6;
+}
+
+.marcador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.marcador-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  transition: all 0.2s;
+}
+
+.marcador-item.jugador-activo {
+  background-color: #e7f1ff;
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.2);
+}
+
+.marcador-item .ficha {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #0d6efd;
+}
+
+.marcador-item .nombre {
+  font-weight: 600;
+  color: #212529;
+}
+
+.marcador-item .puntos {
+  background: #212529;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.marcador-vs {
+  font-weight: 800;
+  color: #adb5bd;
+  font-size: 0.9rem;
+}
+
+.square.ganadora {
+  background-color: #d1e7dd !important;
+  color: #0f5132 !important;
+  border-color: #badbcc;
+  font-weight: 900;
+  transform: scale(1.03);
+  transition: all 0.25s ease-in-out;
+  box-shadow: inset 0 0 0 2px #198754;
+}
